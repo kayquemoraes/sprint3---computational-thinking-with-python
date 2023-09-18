@@ -12,13 +12,6 @@ materiais = {
     "preco": [5, 10, 15, 20]  # Lista de preços associados a cada tipo de material.
 }
 
-# Dicionário que armazena informações do cupom, incluindo o nome de usuário, resíduos depositados e o valor total acumulado.
-cupom = {
-    "nome de usuario": "",  # Nome de usuário associado às atividades da sessão.
-    "residuos": {},         # Dicionário para armazenar os resíduos depositados e suas quantidades.
-    "valor total": 0        # Valor total acumulado com base nos resíduos depositados.
-}
-
 # Função para validar a opção escolhida pelo usuário em um menu.
 def validar_opcao(lista, frase):
     opcao = input(frase)
@@ -143,6 +136,12 @@ pela reciclagem e comece a ser recompensado por suas ações conscientes! ''')
 
 # Solicitar ao usuário que escolha entre fazer login ou registrar uma nova conta.
 while True:
+    # Dicionário que armazena informações do cupom, incluindo o nome de usuário, resíduos depositados e o valor total acumulado.
+    cupom = {
+        "nome de usuario": "",  # Nome de usuário associado às atividades da sessão.
+        "residuos": {},  # Dicionário para armazenar os resíduos depositados e suas quantidades.
+        "valor total": 0  # Valor total acumulado com base nos resíduos depositados.
+    }
     opcao = validar_opcao(['1','2'],"[1] Entrar\n[2] Registrar\nDigite: ")
     if opcao == '1':
         usuario = login_usuario()
