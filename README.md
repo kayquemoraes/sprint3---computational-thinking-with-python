@@ -115,7 +115,7 @@ Digite: 5
 
 Obrigado por usar nossa lixeira!
 nome de usuario : novo_usuario
-residuos : {'plastico': 3}
+plastico: 3
 valor total : 15
 
 ```
