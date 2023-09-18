@@ -142,33 +142,35 @@ ajuda a preservar o meio ambiente para as próximas gerações. Então, o que es
 pela reciclagem e comece a ser recompensado por suas ações conscientes! ''')
 
 # Solicitar ao usuário que escolha entre fazer login ou registrar uma nova conta.
-opcao = validar_opcao(['1','2'],"[1] Entrar\n[2] Registrar\nDigite: ")
-if opcao == '1':
-    usuario = login_usuario()
-else:
-    usuario = registrar_usuario()
-cupom["nome de usuario"] = usuario
-
-# Loop principal que permite que o usuário realize várias atividades.
 while True:
-    atividade = validar_opcao(["1", "2", "3", "4", "5"], '''\nO que você quer fazer?
+    opcao = validar_opcao(['1','2'],"[1] Entrar\n[2] Registrar\nDigite: ")
+    if opcao == '1':
+        usuario = login_usuario()
+    else:
+        usuario = registrar_usuario()
+    cupom["nome de usuario"] = usuario
+
+    while True:
+    # Loop principal que permite que o usuário realize várias atividades.
+        atividade = validar_opcao(["1", "2", "3", "4", "5"], '''\nO que você quer fazer?
 [1] Depositar um resíduo na lixeira
 [2] Consultar ou cadastrar um produto
 [3] Consultar seu saldo
 [4] Conhecer nossa lixeira
 [5] Encerrar sua sessão\nDigite: ''')
 
-    if atividade == "1":
-        depositar_residuo(usuario)
+        if atividade == "1":
+            depositar_residuo(usuario)
 
-    elif atividade == "2":
-        consultar_produto()
+        elif atividade == "2":
+            consultar_produto()
 
-    elif atividade == "3":
-        consultar_saldo(usuario)
-    elif atividade == "4":
-        conhecer_lixeira()
-    else:
-        print("\nObrigado por usar nossa lixeira!")
-        printa_dicionarios(cupom)
-        break
+        elif atividade == "3":
+            consultar_saldo(usuario)
+        elif atividade == "4":
+            conhecer_lixeira()
+        else:
+            print("\nObrigado por usar nossa lixeira!")
+            printa_dicionarios(cupom)
+            print("\n")
+            break
